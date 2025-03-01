@@ -15,7 +15,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   #map
-  google_maps_flutter: ^2.10.0
+  google_maps_flutter: ^2.10.1
   flutter_google_places: ^0.3.0
   #firebase
   firebase_core: ^3.12.0
@@ -26,7 +26,7 @@ dependencies:
   #image
   image_picker: ^1.1.2
   image_gallery_saver: ^2.0.3
-  file_picker: ^5.2.3
+  file_picker: ^9.0.2
   #bloc
   flutter_bloc: ^9.0.0
   #provider

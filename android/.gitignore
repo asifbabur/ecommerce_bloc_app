@@ -1,0 +1,52 @@
+# Flutter & Dart related
+.dart_tool/
+.packages
+.pub/
+.pub-cache/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+.flutter-versions
+.flutter-exports
+
+# Temporary files
+*.log
+*.lock
+
+# Android specific
+android/**/build/
+android/.gradle/
+android/captures/
+android/local.properties
+android/key.properties
+**/gradle-wrapper.jar
+# NOTE: Do not ignore gradlew or gradlew.bat—they are required for builds.
+# gradlew
+# gradlew.bat
+
+# iOS specific
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/Generated.xcconfig
+ios/Flutter/ephemeral/
+ios/Pods/
+ios/.symlinks/
+
+# Xcode / Derived Data
+DerivedData/
+*.xcworkspace/
+xcuserdata/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.hmap
+
+# IDEs & Editors
+.vscode/
+.idea/
+*.iml
+
+# Generated files
+GeneratedPluginRegistrant.java
+
+# Keystore files (DO NOT commit these)
+**/*.keystore
+**/*.jks
