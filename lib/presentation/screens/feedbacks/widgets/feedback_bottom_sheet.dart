@@ -1,14 +1,12 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ecommerce_bloc_app/presentation/common_blocs/profile/bloc.dart';
-import 'package:ecommerce_bloc_app/configs/size_config.dart';
-import 'package:ecommerce_bloc_app/constants/constants.dart';
-import 'package:ecommerce_bloc_app/presentation/screens/feedbacks/bloc/bloc.dart';
-import 'package:ecommerce_bloc_app/presentation/widgets/buttons/default_button.dart';
-import 'package:ecommerce_bloc_app/presentation/widgets/others/rating_bar.dart';
-import 'package:ecommerce_bloc_app/utils/utils.dart';
+import 'package:myezzecommerce_app/presentation/common_blocs/profile/bloc.dart';
+import 'package:myezzecommerce_app/configs/size_config.dart';
+import 'package:myezzecommerce_app/constants/constants.dart';
+import 'package:myezzecommerce_app/presentation/screens/feedbacks/bloc/bloc.dart';
+import 'package:myezzecommerce_app/presentation/widgets/buttons/default_button.dart';
+import 'package:myezzecommerce_app/presentation/widgets/others/rating_bar.dart';
+import 'package:myezzecommerce_app/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ecommerce_bloc_app/constants/color_constant.dart';
 
 class FeedbackBottomSheet extends StatefulWidget {
   const FeedbackBottomSheet({Key? key}) : super(key: key);

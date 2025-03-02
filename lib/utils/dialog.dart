@@ -1,7 +1,6 @@
-import 'package:ecommerce_bloc_app/constants/constants.dart';
-import 'package:ecommerce_bloc_app/presentation/widgets/custom_widgets.dart';
-import 'package:ecommerce_bloc_app/utils/translate.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:myezzecommerce_app/constants/constants.dart';
+import 'package:myezzecommerce_app/presentation/widgets/custom_widgets.dart';
+import 'package:myezzecommerce_app/utils/translate.dart';
 import 'package:flutter/material.dart';
 
 class UtilDialog {

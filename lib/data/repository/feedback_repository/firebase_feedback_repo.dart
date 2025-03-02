@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ecommerce_bloc_app/data/models/models.dart';
-import 'package:ecommerce_bloc_app/data/repository/feedback_repository/feedback_repo.dart';
+import 'package:myezzecommerce_app/data/models/models.dart';
+import 'package:myezzecommerce_app/data/repository/feedback_repository/feedback_repo.dart';
 
 /// Feedbacks is collection type in each product
 class FirebaseFeedbackRepository implements FeedbackRepository {
@@ -18,7 +18,7 @@ class FirebaseFeedbackRepository implements FeedbackRepository {
           .orderBy("timestamp", descending: true)
           .snapshots()
           .map((snapshot) => snapshot.docs
-              .map((doc) => FeedBackModel.fromMap(doc.data()!))
+              .map((doc) => FeedBackModel.fromMap(doc.data()))
               .toList());
     } catch (e) {
       print(e);
@@ -40,7 +40,7 @@ class FirebaseFeedbackRepository implements FeedbackRepository {
             .orderBy("timestamp", descending: true)
             .get()
             .then((snapshot) => snapshot.docs
-                .map((doc) => FeedBackModel.fromMap(doc.data()!))
+                .map((doc) => FeedBackModel.fromMap(doc.data()))
                 .toList())
             .catchError((error) {})
         : await productCollection
@@ -49,7 +49,7 @@ class FirebaseFeedbackRepository implements FeedbackRepository {
             .orderBy("timestamp", descending: true)
             .get()
             .then((snapshot) => snapshot.docs
-                .map((doc) => FeedBackModel.fromMap(doc.data()!))
+                .map((doc) => FeedBackModel.fromMap(doc.data()))
                 .toList())
             .catchError((error) {});
   }

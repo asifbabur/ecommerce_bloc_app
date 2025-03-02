@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ecommerce_bloc_app/configs/size_config.dart';
-import 'package:ecommerce_bloc_app/constants/color_constant.dart';
+import 'package:myezzecommerce_app/configs/size_config.dart';
+import 'package:myezzecommerce_app/constants/color_constant.dart';
 
 class DefaultButton extends StatelessWidget {
   final Function() onPressed;

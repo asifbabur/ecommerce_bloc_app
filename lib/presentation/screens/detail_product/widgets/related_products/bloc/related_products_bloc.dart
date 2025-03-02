@@ -1,5 +1,5 @@
-import 'package:ecommerce_bloc_app/data/repository/repository.dart';
-import 'package:ecommerce_bloc_app/presentation/screens/detail_product/widgets/related_products/bloc/bloc.dart';
+import 'package:myezzecommerce_app/data/repository/repository.dart';
+import 'package:myezzecommerce_app/presentation/screens/detail_product/widgets/related_products/bloc/bloc.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -1,8 +1,8 @@
-import 'package:ecommerce_bloc_app/configs/config.dart';
-import 'package:ecommerce_bloc_app/data/models/models.dart';
-import 'package:ecommerce_bloc_app/presentation/screens/message/bloc/bloc.dart';
-import 'package:ecommerce_bloc_app/presentation/screens/message/widgets/message_card.dart';
-import 'package:ecommerce_bloc_app/presentation/widgets/custom_widgets.dart';
+import 'package:myezzecommerce_app/configs/config.dart';
+import 'package:myezzecommerce_app/data/models/models.dart';
+import 'package:myezzecommerce_app/presentation/screens/message/bloc/bloc.dart';
+import 'package:myezzecommerce_app/presentation/screens/message/widgets/message_card.dart';
+import 'package:myezzecommerce_app/presentation/widgets/custom_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

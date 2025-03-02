@@ -1,8 +1,8 @@
-// import 'package:ecommerce_bloc_app/constants/style_constant.dart';
-// import 'package:ecommerce_bloc_app/presentation/screens/forgot_password/widgets/forgot_pass_form.dart';
+// import 'package:myezzecommerce_app/constants/style_constant.dart';
+// import 'package:myezzecommerce_app/presentation/screens/forgot_password/widgets/forgot_pass_form.dart';
 // import 'package:flutter/material.dart';
 
-// import 'package:ecommerce_bloc_app/configs/size_config.dart';
+// import 'package:myezzecommerce_app/configs/size_config.dart';
 
 // class Body extends StatelessWidget {
 //   @override

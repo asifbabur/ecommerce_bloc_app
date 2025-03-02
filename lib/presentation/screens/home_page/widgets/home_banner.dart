@@ -1,8 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:ecommerce_bloc_app/data/models/models.dart';
-import 'package:ecommerce_bloc_app/configs/size_config.dart';
-import 'package:ecommerce_bloc_app/constants/color_constant.dart';
-import 'package:ecommerce_bloc_app/presentation/widgets/others/shimmer_image.dart';
+import 'package:myezzecommerce_app/data/models/models.dart';
+import 'package:myezzecommerce_app/configs/size_config.dart';
+import 'package:myezzecommerce_app/constants/color_constant.dart';
+import 'package:myezzecommerce_app/presentation/widgets/others/shimmer_image.dart';
 import 'package:flutter/material.dart';
 
 class HomeBanner extends StatefulWidget {

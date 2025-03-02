@@ -1,5 +1,5 @@
-import 'package:ecommerce_bloc_app/configs/size_config.dart';
-import 'package:ecommerce_bloc_app/constants/constants.dart';
+import 'package:myezzecommerce_app/configs/size_config.dart';
+import 'package:myezzecommerce_app/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

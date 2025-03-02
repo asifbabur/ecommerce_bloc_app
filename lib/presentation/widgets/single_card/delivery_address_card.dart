@@ -1,7 +1,7 @@
-import 'package:ecommerce_bloc_app/data/models/models.dart';
-import 'package:ecommerce_bloc_app/constants/constants.dart';
-import 'package:ecommerce_bloc_app/presentation/widgets/custom_widgets.dart';
-import 'package:ecommerce_bloc_app/utils/translate.dart';
+import 'package:myezzecommerce_app/data/models/models.dart';
+import 'package:myezzecommerce_app/constants/constants.dart';
+import 'package:myezzecommerce_app/presentation/widgets/custom_widgets.dart';
+import 'package:myezzecommerce_app/utils/translate.dart';
 import 'package:flutter/material.dart';
 
 class DeliveryAddressCard extends StatelessWidget {

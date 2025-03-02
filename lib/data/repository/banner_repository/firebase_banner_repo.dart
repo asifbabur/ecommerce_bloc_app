@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ecommerce_bloc_app/data/models/models.dart';
+import 'package:myezzecommerce_app/data/models/models.dart';
 
-import 'package:ecommerce_bloc_app/data/repository/banner_repository/banner_repo.dart';
+import 'package:myezzecommerce_app/data/repository/banner_repository/banner_repo.dart';
 
 /// Cart is collection in each user
 class FirebaseBannerRepository implements BannerRepository {
@@ -11,7 +11,7 @@ class FirebaseBannerRepository implements BannerRepository {
         .collection("banners")
         .get()
         .then((snapshot) => snapshot.docs
-            .map((doc) => BannerModel.fromMap(doc.data()!))
+            .map((doc) => BannerModel.fromMap(doc.data()))
             .toList())
         .catchError((err) {});
   }

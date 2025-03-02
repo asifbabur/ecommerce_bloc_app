@@ -1,12 +1,10 @@
-import 'package:ecommerce_bloc_app/data/models/models.dart';
-import 'package:ecommerce_bloc_app/configs/size_config.dart';
-import 'package:ecommerce_bloc_app/constants/color_constant.dart';
-import 'package:ecommerce_bloc_app/constants/constants.dart';
-import 'package:ecommerce_bloc_app/presentation/screens/categories/bloc/bloc.dart';
-import 'package:ecommerce_bloc_app/presentation/screens/categories/widgets/sort_option_dialog.dart';
-import 'package:ecommerce_bloc_app/presentation/widgets/custom_widgets.dart';
-import 'package:ecommerce_bloc_app/utils/utils.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:myezzecommerce_app/data/models/models.dart';
+import 'package:myezzecommerce_app/configs/size_config.dart';
+import 'package:myezzecommerce_app/constants/constants.dart';
+import 'package:myezzecommerce_app/presentation/screens/categories/bloc/bloc.dart';
+import 'package:myezzecommerce_app/presentation/screens/categories/widgets/sort_option_dialog.dart';
+import 'package:myezzecommerce_app/presentation/widgets/custom_widgets.dart';
+import 'package:myezzecommerce_app/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

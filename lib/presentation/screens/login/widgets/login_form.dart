@@ -1,11 +1,12 @@
-import 'package:ecommerce_bloc_app/presentation/common_blocs/auth/bloc.dart';
-import 'package:ecommerce_bloc_app/configs/config.dart';
-import 'package:ecommerce_bloc_app/constants/constants.dart';
-import 'package:ecommerce_bloc_app/presentation/screens/login/bloc/bloc.dart';
-import 'package:ecommerce_bloc_app/presentation/widgets/custom_widgets.dart';
-import 'package:ecommerce_bloc_app/utils/utils.dart';
+import 'package:myezzecommerce_app/presentation/common_blocs/auth/bloc.dart';
+import 'package:myezzecommerce_app/configs/config.dart';
+import 'package:myezzecommerce_app/constants/constants.dart';
+import 'package:myezzecommerce_app/presentation/screens/login/bloc/bloc.dart';
+import 'package:myezzecommerce_app/presentation/widgets/custom_widgets.dart';
+import 'package:myezzecommerce_app/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
 
 class LoginForm extends StatefulWidget {
   @override
@@ -99,6 +100,16 @@ class _LoginFormState extends State<LoginForm> {
                   _buildButtonLogin(state),
                   SizedBox(height: SizeConfig.defaultSize * 2),
                   _buildTextOr(),
+                  SizedBox(height: SizeConfig.defaultSize * 2),
+                  IconButton(
+                    icon: SvgPicture.asset(
+                      'assets/icons/google_sign_in.svg',
+                      width: SizeConfig.defaultSize * 5,
+                    ),
+                    onPressed: () {
+                      loginBloc.add(LoginWithGoogle());
+                    },
+                  ),
                 ],
               ),
             ),

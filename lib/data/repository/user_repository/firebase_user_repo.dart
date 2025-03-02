@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ecommerce_bloc_app/data/models/models.dart';
-import 'package:ecommerce_bloc_app/data/repository/user_repository/user_repo.dart';
+import 'package:myezzecommerce_app/data/models/models.dart';
+import 'package:myezzecommerce_app/data/repository/user_repository/user_repo.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class FirebaseUserRepository implements UserRepository {

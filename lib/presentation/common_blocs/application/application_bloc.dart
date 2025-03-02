@@ -1,10 +1,10 @@
 import 'package:bloc/bloc.dart';
-import 'package:ecommerce_bloc_app/presentation/common_blocs/common_bloc.dart';
-import 'package:ecommerce_bloc_app/presentation/common_blocs/application/bloc.dart';
-import 'package:ecommerce_bloc_app/presentation/common_blocs/auth/auth_event.dart';
-import 'package:ecommerce_bloc_app/presentation/common_blocs/language/bloc.dart';
-import 'package:ecommerce_bloc_app/data/local/pref.dart';
-import 'package:ecommerce_bloc_app/configs/application.dart';
+import 'package:myezzecommerce_app/presentation/common_blocs/common_bloc.dart';
+import 'package:myezzecommerce_app/presentation/common_blocs/application/bloc.dart';
+import 'package:myezzecommerce_app/presentation/common_blocs/auth/auth_event.dart';
+import 'package:myezzecommerce_app/presentation/common_blocs/language/bloc.dart';
+import 'package:myezzecommerce_app/data/local/pref.dart';
+import 'package:myezzecommerce_app/configs/application.dart';
 import 'package:flutter/material.dart';
 
 class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {

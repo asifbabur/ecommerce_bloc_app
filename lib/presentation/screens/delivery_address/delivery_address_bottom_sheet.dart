@@ -1,13 +1,12 @@
-import 'package:ecommerce_bloc_app/data/models/location_model.dart';
-import 'package:ecommerce_bloc_app/presentation/common_blocs/profile/bloc.dart';
-import 'package:ecommerce_bloc_app/data/models/models.dart';
-import 'package:ecommerce_bloc_app/configs/router.dart';
-import 'package:ecommerce_bloc_app/configs/size_config.dart';
-import 'package:ecommerce_bloc_app/constants/constants.dart';
-import 'package:ecommerce_bloc_app/utils/dialog.dart';
-import 'package:ecommerce_bloc_app/presentation/widgets/custom_widgets.dart';
-import 'package:ecommerce_bloc_app/presentation/widgets/others/custom_card_widget.dart';
-import 'package:ecommerce_bloc_app/utils/translate.dart';
+import 'package:myezzecommerce_app/data/models/location_model.dart';
+import 'package:myezzecommerce_app/presentation/common_blocs/profile/bloc.dart';
+import 'package:myezzecommerce_app/data/models/models.dart';
+import 'package:myezzecommerce_app/configs/router.dart';
+import 'package:myezzecommerce_app/configs/size_config.dart';
+import 'package:myezzecommerce_app/constants/constants.dart';
+import 'package:myezzecommerce_app/utils/dialog.dart';
+import 'package:myezzecommerce_app/presentation/widgets/custom_widgets.dart';
+import 'package:myezzecommerce_app/utils/translate.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -220,7 +219,7 @@ class _DeliveryAddressModelBottomSheetState
           CupertinoSwitch(
             value: isDefaultAddress,
             onChanged: onSwitchButtonChanged(),
-            trackColor: COLOR_CONST.primaryColor,
+            inactiveTrackColor: COLOR_CONST.primaryColor,
           ),
         ],
       ),

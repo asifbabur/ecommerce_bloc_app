@@ -1,12 +1,12 @@
-import 'package:ecommerce_bloc_app/configs/config.dart';
-import 'package:ecommerce_bloc_app/constants/constants.dart';
-import 'package:ecommerce_bloc_app/data/models/models.dart';
-import 'package:ecommerce_bloc_app/presentation/screens/register/register/bloc.dart';
-import 'package:ecommerce_bloc_app/utils/utils.dart';
+import 'package:myezzecommerce_app/configs/config.dart';
+import 'package:myezzecommerce_app/constants/constants.dart';
+import 'package:myezzecommerce_app/data/models/models.dart';
+import 'package:myezzecommerce_app/presentation/screens/register/register/bloc.dart';
+import 'package:myezzecommerce_app/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ecommerce_bloc_app/presentation/screens/register/widgets/register_form.dart';
-import 'package:ecommerce_bloc_app/presentation/screens/register/widgets/register_header.dart';
+import 'package:myezzecommerce_app/presentation/screens/register/widgets/register_form.dart';
+import 'package:myezzecommerce_app/presentation/screens/register/widgets/register_header.dart';
 
 class RegisterScreen extends StatelessWidget {
   final UserModel initialUser;

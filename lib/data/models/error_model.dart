@@ -1,4 +1,4 @@
-import 'package:ecommerce_bloc_app/constants/key_constant.dart';
+import 'package:myezzecommerce_app/constants/key_constant.dart';
 
 class ErrorModel {
   int code;

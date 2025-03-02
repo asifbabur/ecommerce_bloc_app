@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "55266420712",
+    "project_id": "ez-ecommerce-4be93",
+    "storage_bucket": "ez-ecommerce-4be93.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55266420712:android:3320cfe32bf1327733665d",
+        "android_client_info": {
+          "package_name": "com.example.ecommerce_bloc_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "55266420712-spoo740p7uunobla20g3o8g80rmr77qk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsdvGP1QJsQS4McSPT_muuEScFcDazgBQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "55266420712-spoo740p7uunobla20g3o8g80rmr77qk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "55266420712-7a95pbc4bvmsq48kod2at6svnmcchf7g.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.ecommerceBlocApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55266420712:android:c47f6fa874706cbf33665d",
+        "android_client_info": {
+          "package_name": "com.myezzecommerce.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "55266420712-kshknpu241s6btdrgmjdrbg0qvm542gm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.myezzecommerce.app",
+            "certificate_hash": "d28e42b71a2d494cf96d2be310fb7b2e025a5efb"
+          }
+        },
+        {
+          "client_id": "55266420712-spoo740p7uunobla20g3o8g80rmr77qk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsdvGP1QJsQS4McSPT_muuEScFcDazgBQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "55266420712-spoo740p7uunobla20g3o8g80rmr77qk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "55266420712-7a95pbc4bvmsq48kod2at6svnmcchf7g.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.ecommerceBlocApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

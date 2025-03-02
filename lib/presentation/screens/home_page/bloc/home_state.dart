@@ -1,4 +1,4 @@
-import 'package:ecommerce_bloc_app/presentation/screens/home_page/bloc/bloc.dart';
+import 'package:myezzecommerce_app/presentation/screens/home_page/bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class HomeState extends Equatable {

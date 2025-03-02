@@ -1,10 +1,10 @@
 import 'dart:async';
 
-import 'package:ecommerce_bloc_app/presentation/common_blocs/cart/bloc.dart';
-import 'package:ecommerce_bloc_app/data/repository/app_repository.dart';
-import 'package:ecommerce_bloc_app/data/repository/auth_repository/auth_repo.dart';
-import 'package:ecommerce_bloc_app/data/repository/cart_repository/cart_repo.dart';
-import 'package:ecommerce_bloc_app/data/repository/product_repository/product_repo.dart';
+import 'package:myezzecommerce_app/presentation/common_blocs/cart/bloc.dart';
+import 'package:myezzecommerce_app/data/repository/app_repository.dart';
+import 'package:myezzecommerce_app/data/repository/auth_repository/auth_repo.dart';
+import 'package:myezzecommerce_app/data/repository/cart_repository/cart_repo.dart';
+import 'package:myezzecommerce_app/data/repository/product_repository/product_repo.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -15,26 +15,16 @@ class CartBloc extends Bloc<CartEvent, CartState> {
   late User _loggedFirebaseUser;
   StreamSubscription? _fetchCartSub;
 
-  CartBloc() : super(CartLoading());
-
-  @override
-  Stream<CartState> mapEventToState(CartEvent event) async* {
-    if (event is LoadCart) {
-      yield* _mapLoadCartToState(event);
-    } else if (event is AddCartItemModel) {
-      yield* _mapAddCartItemModelToState(event);
-    } else if (event is RemoveCartItemModel) {
-      yield* _mapRemoveCartItemModelToState(event);
-    } else if (event is UpdateCartItemModel) {
-      yield* _mapUpdateCartItemModelToState(event);
-    } else if (event is ClearCart) {
-      yield* _mapClearCartToState();
-    } else if (event is CartUpdated) {
-      yield* _mapCartUpdatedToState(event);
-    }
+  CartBloc() : super(CartLoading()) {
+    on<LoadCart>(_onLoadCart);
+    on<AddCartItemModel>(_onAddCartItem);
+    on<RemoveCartItemModel>(_onRemoveCartItem);
+    on<UpdateCartItemModel>(_onUpdateCartItem);
+    on<ClearCart>(_onClearCart);
+    on<CartUpdated>(_onCartUpdated);
   }
 
-  Stream<CartState> _mapLoadCartToState(LoadCart event) async* {
+  Future<void> _onLoadCart(LoadCart event, Emitter<CartState> emit) async {
     try {
       _fetchCartSub?.cancel();
       _loggedFirebaseUser = _authRepository.loggedFirebaseUser;
@@ -42,11 +32,12 @@ class CartBloc extends Bloc<CartEvent, CartState> {
           .fetchCart(_loggedFirebaseUser.uid)
           .listen((cart) => add(CartUpdated(cart)));
     } catch (e) {
-      yield CartLoadFailure(e.toString());
+      emit(CartLoadFailure(e.toString()));
     }
   }
 
-  Stream<CartState> _mapAddCartItemModelToState(AddCartItemModel event) async* {
+  Future<void> _onAddCartItem(
+      AddCartItemModel event, Emitter<CartState> emit) async {
     try {
       await _cartRepository.addCartItemModel(
           _loggedFirebaseUser.uid, event.cartItem);
@@ -55,8 +46,8 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     }
   }
 
-  Stream<CartState> _mapRemoveCartItemModelToState(
-      RemoveCartItemModel event) async* {
+  Future<void> _onRemoveCartItem(
+      RemoveCartItemModel event, Emitter<CartState> emit) async {
     try {
       await _cartRepository.removeCartItemModel(
         _loggedFirebaseUser.uid,
@@ -67,8 +58,8 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     }
   }
 
-  Stream<CartState> _mapUpdateCartItemModelToState(
-      UpdateCartItemModel event) async* {
+  Future<void> _onUpdateCartItem(
+      UpdateCartItemModel event, Emitter<CartState> emit) async {
     try {
       await _cartRepository.updateCartItemModel(
         _loggedFirebaseUser.uid,
@@ -79,7 +70,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     }
   }
 
-  Stream<CartState> _mapClearCartToState() async* {
+  Future<void> _onClearCart(ClearCart event, Emitter<CartState> emit) async {
     try {
       await _cartRepository.clearCart(_loggedFirebaseUser.uid);
     } catch (e) {
@@ -87,27 +78,24 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     }
   }
 
-  Stream<CartState> _mapCartUpdatedToState(CartUpdated event) async* {
-    yield CartLoading();
-
+  Future<void> _onCartUpdated(
+      CartUpdated event, Emitter<CartState> emit) async {
+    emit(CartLoading());
     var updatedCart = event.updatedCart;
     var priceOfGoods = 0;
+
     for (var i = 0; i < updatedCart.length; i++) {
       priceOfGoods += updatedCart[i].price;
-      // Get product by id that is provided from cart item
       try {
         var productInfo =
             await _productRepository.getProductById(updatedCart[i].productId);
         updatedCart[i] = updatedCart[i].cloneWith(productInfo: productInfo);
       } catch (e) {
-        yield CartLoadFailure(e.toString());
+        emit(CartLoadFailure(e.toString()));
+        return;
       }
     }
-
-    yield CartLoaded(
-      cart: updatedCart,
-      priceOfGoods: priceOfGoods,
-    );
+    emit(CartLoaded(cart: updatedCart, priceOfGoods: priceOfGoods));
   }
 
   @override

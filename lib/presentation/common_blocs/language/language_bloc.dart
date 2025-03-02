@@ -1,5 +1,5 @@
-import 'package:ecommerce_bloc_app/data/local/pref.dart';
-import 'package:ecommerce_bloc_app/configs/config.dart';
+import 'package:myezzecommerce_app/data/local/pref.dart';
+import 'package:myezzecommerce_app/configs/config.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'bloc.dart';

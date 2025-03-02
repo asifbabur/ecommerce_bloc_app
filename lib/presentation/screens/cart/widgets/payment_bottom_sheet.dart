@@ -1,14 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ecommerce_bloc_app/presentation/common_blocs/cart/bloc.dart';
-import 'package:ecommerce_bloc_app/presentation/common_blocs/order/bloc.dart';
-import 'package:ecommerce_bloc_app/presentation/common_blocs/profile/bloc.dart';
-import 'package:ecommerce_bloc_app/data/models/models.dart';
-import 'package:ecommerce_bloc_app/configs/config.dart';
-import 'package:ecommerce_bloc_app/constants/constants.dart';
-import 'package:ecommerce_bloc_app/presentation/widgets/custom_widgets.dart';
-import 'package:ecommerce_bloc_app/presentation/widgets/others/payment_fees_widget.dart';
-import 'package:ecommerce_bloc_app/utils/toast.dart';
-import 'package:ecommerce_bloc_app/utils/utils.dart';
+import 'package:myezzecommerce_app/presentation/common_blocs/cart/bloc.dart';
+import 'package:myezzecommerce_app/presentation/common_blocs/order/bloc.dart';
+import 'package:myezzecommerce_app/presentation/common_blocs/profile/bloc.dart';
+import 'package:myezzecommerce_app/data/models/models.dart';
+import 'package:myezzecommerce_app/configs/config.dart';
+import 'package:myezzecommerce_app/constants/constants.dart';
+import 'package:myezzecommerce_app/presentation/widgets/custom_widgets.dart';
+import 'package:myezzecommerce_app/presentation/widgets/others/payment_fees_widget.dart';
+import 'package:myezzecommerce_app/utils/toast.dart';
+import 'package:myezzecommerce_app/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 // ignore: import_of_legacy_library_into_null_safe

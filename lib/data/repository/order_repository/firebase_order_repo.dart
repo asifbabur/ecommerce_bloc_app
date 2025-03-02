@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ecommerce_bloc_app/data/models/models.dart';
-import 'package:ecommerce_bloc_app/data/repository/order_repository/order_repo.dart';
+import 'package:myezzecommerce_app/data/models/models.dart';
+import 'package:myezzecommerce_app/data/repository/order_repository/order_repo.dart';
 
 /// cart is collection in each user
 class FirebaseOrderRepository implements OrderRepository {
@@ -12,7 +12,7 @@ class FirebaseOrderRepository implements OrderRepository {
         .where("uid", isEqualTo: uid)
         .get()
         .then((snapshot) => snapshot.docs.map((doc) {
-              var data = doc.data()!;
+              var data = doc.data();
               return OrderModel.fromMap(data);
             }).toList());
   }

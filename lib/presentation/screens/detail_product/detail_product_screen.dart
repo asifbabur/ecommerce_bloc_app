@@ -1,10 +1,9 @@
-import 'package:ecommerce_bloc_app/data/models/models.dart';
-import 'package:ecommerce_bloc_app/presentation/screens/detail_product/widgets/app_bar.dart';
-import 'package:ecommerce_bloc_app/presentation/screens/detail_product/widgets/product_images.dart';
-import 'package:ecommerce_bloc_app/presentation/screens/detail_product/widgets/product_info.dart';
-import 'package:ecommerce_bloc_app/presentation/screens/detail_product/widgets/related_products/related_products.dart';
-import 'package:ecommerce_bloc_app/presentation/screens/detail_product/widgets/slogan.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:myezzecommerce_app/data/models/models.dart';
+import 'package:myezzecommerce_app/presentation/screens/detail_product/widgets/app_bar.dart';
+import 'package:myezzecommerce_app/presentation/screens/detail_product/widgets/product_images.dart';
+import 'package:myezzecommerce_app/presentation/screens/detail_product/widgets/product_info.dart';
+import 'package:myezzecommerce_app/presentation/screens/detail_product/widgets/related_products/related_products.dart';
+import 'package:myezzecommerce_app/presentation/screens/detail_product/widgets/slogan.dart';
 import 'package:flutter/material.dart';
 import 'widgets/add_to_cart_nav.dart';
 

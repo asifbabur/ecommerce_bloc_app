@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ecommerce_bloc_app/data/models/models.dart';
-import 'package:ecommerce_bloc_app/data/repository/cart_repository/cart_repo.dart';
+import 'package:myezzecommerce_app/data/models/models.dart';
+import 'package:myezzecommerce_app/data/repository/cart_repository/cart_repo.dart';
 
 /// cart is collection in each user
 class FirebaseCartRepository implements CartRepository {
@@ -13,7 +13,7 @@ class FirebaseCartRepository implements CartRepository {
         .collection("cart")
         .snapshots()
         .map((snapshot) => snapshot.docs.map((doc) {
-              var data = doc.data()!;
+              var data = doc.data();
               return CartItemModel.fromMap(data);
             }).toList());
   }

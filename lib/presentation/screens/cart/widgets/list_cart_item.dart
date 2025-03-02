@@ -1,11 +1,11 @@
-import 'package:ecommerce_bloc_app/presentation/common_blocs/cart/bloc.dart';
-import 'package:ecommerce_bloc_app/data/models/models.dart';
-import 'package:ecommerce_bloc_app/configs/size_config.dart';
-import 'package:ecommerce_bloc_app/constants/image_constant.dart';
-import 'package:ecommerce_bloc_app/presentation/widgets/others/custom_dismissible.dart';
-import 'package:ecommerce_bloc_app/presentation/widgets/others/loading.dart';
-import 'package:ecommerce_bloc_app/presentation/widgets/others/promo_widget.dart';
-import 'package:ecommerce_bloc_app/presentation/widgets/single_card/cart_item_card.dart';
+import 'package:myezzecommerce_app/presentation/common_blocs/cart/bloc.dart';
+import 'package:myezzecommerce_app/data/models/models.dart';
+import 'package:myezzecommerce_app/configs/size_config.dart';
+import 'package:myezzecommerce_app/constants/image_constant.dart';
+import 'package:myezzecommerce_app/presentation/widgets/others/custom_dismissible.dart';
+import 'package:myezzecommerce_app/presentation/widgets/others/loading.dart';
+import 'package:myezzecommerce_app/presentation/widgets/others/promo_widget.dart';
+import 'package:myezzecommerce_app/presentation/widgets/single_card/cart_item_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

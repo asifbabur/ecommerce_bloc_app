@@ -1,4 +1,4 @@
-import 'package:ecommerce_bloc_app/utils/utils.dart';
+import 'package:myezzecommerce_app/utils/utils.dart';
 
 extension PriceParsing on int {
   String toPrice() {

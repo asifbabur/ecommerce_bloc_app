@@ -1,10 +1,9 @@
-import 'package:ecommerce_bloc_app/presentation/common_blocs/cart/bloc.dart';
-import 'package:ecommerce_bloc_app/configs/size_config.dart';
-import 'package:ecommerce_bloc_app/constants/constants.dart';
-import 'package:ecommerce_bloc_app/presentation/screens/cart/widgets/payment_bottom_sheet.dart';
-import 'package:ecommerce_bloc_app/utils/dialog.dart';
-import 'package:ecommerce_bloc_app/utils/utils.dart';
-import 'package:ecommerce_bloc_app/presentation/widgets/buttons/default_button.dart';
+import 'package:myezzecommerce_app/presentation/common_blocs/cart/bloc.dart';
+import 'package:myezzecommerce_app/configs/size_config.dart';
+import 'package:myezzecommerce_app/constants/constants.dart';
+import 'package:myezzecommerce_app/presentation/screens/cart/widgets/payment_bottom_sheet.dart';
+import 'package:myezzecommerce_app/utils/utils.dart';
+import 'package:myezzecommerce_app/presentation/widgets/buttons/default_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';

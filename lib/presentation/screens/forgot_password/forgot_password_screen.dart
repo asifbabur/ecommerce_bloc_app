@@ -1,4 +1,4 @@
-// import 'package:ecommerce_bloc_app/presentation/screens/forgot_password/widgets/body.dart';
+// import 'package:myezzecommerce_app/presentation/screens/forgot_password/widgets/body.dart';
 // import 'package:flutter/material.dart';
 
 // class ForgotPasswordScreen extends StatelessWidget {

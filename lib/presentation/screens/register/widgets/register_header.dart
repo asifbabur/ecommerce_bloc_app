@@ -1,7 +1,7 @@
-import 'package:ecommerce_bloc_app/constants/constants.dart';
-import 'package:ecommerce_bloc_app/utils/utils.dart';
+import 'package:myezzecommerce_app/constants/constants.dart';
+import 'package:myezzecommerce_app/utils/utils.dart';
 import 'package:flutter/material.dart';
-import 'package:ecommerce_bloc_app/configs/size_config.dart';
+import 'package:myezzecommerce_app/configs/size_config.dart';
 
 class RegisterHeader extends StatelessWidget {
   @override

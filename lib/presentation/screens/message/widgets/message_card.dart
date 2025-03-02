@@ -1,9 +1,9 @@
-import 'package:ecommerce_bloc_app/configs/config.dart';
-import 'package:ecommerce_bloc_app/constants/constants.dart';
-import 'package:ecommerce_bloc_app/data/models/models.dart';
-import 'package:ecommerce_bloc_app/presentation/common_blocs/common_bloc.dart';
-import 'package:ecommerce_bloc_app/presentation/common_blocs/profile/bloc.dart';
-import 'package:ecommerce_bloc_app/utils/formatter.dart';
+import 'package:myezzecommerce_app/configs/config.dart';
+import 'package:myezzecommerce_app/constants/constants.dart';
+import 'package:myezzecommerce_app/data/models/models.dart';
+import 'package:myezzecommerce_app/presentation/common_blocs/common_bloc.dart';
+import 'package:myezzecommerce_app/presentation/common_blocs/profile/bloc.dart';
+import 'package:myezzecommerce_app/utils/formatter.dart';
 import 'package:flutter/material.dart';
 
 class MessageCard extends StatefulWidget {

@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:ecommerce_bloc_app/data/repository/app_repository.dart';
-import 'package:ecommerce_bloc_app/data/repository/repository.dart';
-import 'package:ecommerce_bloc_app/presentation/common_blocs/auth/auth_event.dart';
+import 'package:myezzecommerce_app/data/repository/repository.dart';
+import 'package:myezzecommerce_app/presentation/common_blocs/auth/auth_event.dart';
 import 'auth_state.dart';
 
 class AuthenticationBloc

@@ -1,36 +1,38 @@
-import 'package:ecommerce_bloc_app/data/models/models.dart';
-import 'package:ecommerce_bloc_app/data/repository/app_repository.dart';
-import 'package:ecommerce_bloc_app/data/repository/repository.dart';
-import 'package:ecommerce_bloc_app/presentation/screens/home_page/bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:myezzecommerce_app/data/models/models.dart';
+import 'package:myezzecommerce_app/data/repository/repository.dart';
+import 'package:myezzecommerce_app/presentation/screens/home_page/bloc/bloc.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final BannerRepository _bannerRepository = AppRepository.bannerRepository;
   final ProductRepository _productRepository = AppRepository.productRepository;
 
-  HomeBloc() : super(HomeLoading());
-
-  @override
-  Stream<HomeState> mapEventToState(HomeEvent event) async* {
-    if (event is LoadHome) {
-      yield* _mapLoadHomeToState();
-    } else if (event is RefreshHome) {
-      yield HomeLoading();
-      yield* _mapLoadHomeToState();
-    }
+  HomeBloc() : super(HomeLoading()) {
+    on<LoadHome>(_onLoadHome);
+    on<RefreshHome>(_onRefreshHome);
   }
 
-  Stream<HomeState> _mapLoadHomeToState() async* {
+  Future<void> _onLoadHome(LoadHome event, Emitter<HomeState> emit) async {
+    await _fetchHomeData(emit);
+  }
+
+  Future<void> _onRefreshHome(
+      RefreshHome event, Emitter<HomeState> emit) async {
+    emit(HomeLoading());
+    await _fetchHomeData(emit);
+  }
+
+  Future<void> _fetchHomeData(Emitter<HomeState> emit) async {
     try {
-      HomeResponse homeResponse = HomeResponse(
+      final homeResponse = HomeResponse(
         banners: await _bannerRepository.fetchBanners(),
         categories: await _productRepository.getCategories(),
         popularProducts: await _productRepository.fetchPopularProducts(),
         discountProducts: await _productRepository.fetchDiscountProducts(),
       );
-      yield HomeLoaded(homeResponse: homeResponse);
+      emit(HomeLoaded(homeResponse: homeResponse));
     } catch (e) {
-      yield HomeLoadFailure(e.toString());
+      emit(HomeLoadFailure(e.toString()));
     }
   }
 }

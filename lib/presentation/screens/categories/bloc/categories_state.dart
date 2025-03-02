@@ -1,4 +1,4 @@
-import 'package:ecommerce_bloc_app/presentation/screens/categories/bloc/categories_bloc.dart';
+import 'package:myezzecommerce_app/presentation/screens/categories/bloc/categories_bloc.dart';
 import 'package:equatable/equatable.dart';
 
 class CategoriesState extends Equatable {

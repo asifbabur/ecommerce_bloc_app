@@ -1,4 +1,4 @@
-import 'package:ecommerce_bloc_app/data/models/models.dart';
+import 'package:myezzecommerce_app/data/models/models.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class RegisterEvent extends Equatable {

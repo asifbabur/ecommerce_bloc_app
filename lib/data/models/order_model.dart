@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ecommerce_bloc_app/data/models/models.dart';
+import 'package:myezzecommerce_app/data/models/models.dart';
 import 'package:equatable/equatable.dart';
 
 class OrderModel extends Equatable {

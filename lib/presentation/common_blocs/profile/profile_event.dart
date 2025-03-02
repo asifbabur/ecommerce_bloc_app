@@ -1,6 +1,6 @@
 import 'dart:io';
-import 'package:ecommerce_bloc_app/presentation/common_blocs/profile/bloc.dart';
-import 'package:ecommerce_bloc_app/data/models/models.dart';
+import 'package:myezzecommerce_app/presentation/common_blocs/profile/bloc.dart';
+import 'package:myezzecommerce_app/data/models/models.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class ProfileEvent extends Equatable {

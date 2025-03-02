@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'package:dio/dio.dart';
-import 'package:ecommerce_bloc_app/constants/key_constant.dart';
-import 'package:ecommerce_bloc_app/data/models/error_model.dart';
-import 'package:ecommerce_bloc_app/data/request/api_url.dart';
-import 'package:ecommerce_bloc_app/utils/logger.dart';
+import 'package:myezzecommerce_app/constants/key_constant.dart';
+import 'package:myezzecommerce_app/data/models/error_model.dart';
+import 'package:myezzecommerce_app/data/request/api_url.dart';
+import 'package:myezzecommerce_app/utils/logger.dart';
 
 Map<MethodType, String> methods = {
   MethodType.GET: "GET",
@@ -75,7 +75,7 @@ class Request {
         case DioExceptionType.badCertificate:
           // errorModel.description = KEY_CONST.bad_certificate;
           break;
-        case DioErrorType.unknown:
+        case DioExceptionType.unknown:
           errorModel.description = KEY_CONST.unknown_error;
           break;
       }

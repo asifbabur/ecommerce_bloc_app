@@ -1,13 +1,14 @@
-import 'package:ecommerce_bloc_app/data/models/models.dart';
-import 'package:ecommerce_bloc_app/data/repository/auth_repository/auth_repo.dart';
-import 'package:ecommerce_bloc_app/data/repository/repository.dart';
-import 'package:ecommerce_bloc_app/data/repository/user_repository/user_repo.dart';
+import 'dart:developer';
+
+import 'package:myezzecommerce_app/data/models/models.dart';
+import 'package:myezzecommerce_app/data/repository/repository.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 // import 'package:google_sign_in/google_sign_in.dart';
 
 class FirebaseAuthRepository implements AuthRepository {
   FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
-  // GoogleSignIn _googleSignIn = GoogleSignIn();
+  GoogleSignIn _googleSignIn = GoogleSignIn();
   UserRepository _userRepository = FirebaseUserRepository();
   String _authException = "Authentication Failure";
   User get loggedFirebaseUser => _firebaseAuth.currentUser!;
@@ -48,20 +49,25 @@ class FirebaseAuthRepository implements AuthRepository {
 
   // /// Starts the Sign In with Google Flow.
   // /// Created by NDH
-  // Future<void> logInWithGoogle() async {
-  //   try {
-  //     final googleUser =
-  //         await (_googleSignIn.signIn() as Future<GoogleSignInAccount>);
-  //     final googleAuth = await googleUser.authentication;
-  //     final credential = GoogleAuthProvider.credential(
-  //       accessToken: googleAuth.accessToken,
-  //       idToken: googleAuth.idToken,
-  //     );
-  //     await _firebaseAuth.signInWithCredential(credential);
-  //   } on FirebaseAuthException catch (e) {
-  //     _authException = e.message.toString();
-  //   }
-  // }
+  Future<void> logInWithGoogle() async {
+    try {
+      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+      if (googleUser == null) {
+        log('User canceled Google Sign-In');
+        return;
+      }
+      final GoogleSignInAuthentication googleAuth =
+          await googleUser.authentication;
+      final OAuthCredential credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+      await _firebaseAuth.signInWithCredential(credential);
+      log('Google Sign-In successful');
+    } catch (e) {
+      log('Error during Google Sign-In: $e');
+    }
+  }
 
   bool isLoggedIn() => _firebaseAuth.currentUser != null;
 

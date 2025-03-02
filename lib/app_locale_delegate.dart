@@ -1,4 +1,4 @@
-import 'package:ecommerce_bloc_app/configs/config.dart';
+import 'package:myezzecommerce_app/configs/config.dart';
 import 'package:flutter/material.dart';
 
 import 'utils/translate.dart';

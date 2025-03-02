@@ -1,4 +1,4 @@
-import 'package:ecommerce_bloc_app/data/models/models.dart';
+import 'package:myezzecommerce_app/data/models/models.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 abstract class AuthRepository {
@@ -15,7 +15,7 @@ abstract class AuthRepository {
 
   /// Starts the Sign In with Google Flow.
   /// Created by NDH
-  // Future<void> logInWithGoogle();
+  Future<void> logInWithGoogle();
 
   bool isLoggedIn();
 

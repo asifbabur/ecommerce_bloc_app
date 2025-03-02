@@ -1,7 +1,7 @@
-import 'package:ecommerce_bloc_app/data/models/models.dart';
-import 'package:ecommerce_bloc_app/data/local/pref.dart';
-import 'package:ecommerce_bloc_app/data/repository/repository.dart';
-import 'package:ecommerce_bloc_app/presentation/screens/search/bloc/bloc.dart';
+import 'package:myezzecommerce_app/data/models/models.dart';
+import 'package:myezzecommerce_app/data/local/pref.dart';
+import 'package:myezzecommerce_app/data/repository/repository.dart';
+import 'package:myezzecommerce_app/presentation/screens/search/bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rxdart/rxdart.dart';
 
@@ -14,10 +14,12 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
   }
 
   EventTransformer<KeywordChanged> _debounce<KeywordChanged>() {
-    return (events, mapper) => events.debounceTime(Duration(milliseconds: 500)).flatMap(mapper);
+    return (events, mapper) =>
+        events.debounceTime(Duration(milliseconds: 500)).flatMap(mapper);
   }
 
-  Future<void> _onOpenScreen(OpenScreen event, Emitter<SearchState> emit) async {
+  Future<void> _onOpenScreen(
+      OpenScreen event, Emitter<SearchState> emit) async {
     try {
       List<String> recentKeywords = await _getRecentKeywords();
       emit(SuggestionLoaded(
@@ -29,7 +31,8 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
     }
   }
 
-  Future<void> _onKeywordChanged(KeywordChanged event, Emitter<SearchState> emit) async {
+  Future<void> _onKeywordChanged(
+      KeywordChanged event, Emitter<SearchState> emit) async {
     emit(Searching());
     try {
       List<String> recentKeywords = await _getRecentKeywords();
@@ -41,7 +44,8 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
       } else {
         List<Product> products = await _productRepository.fetchProducts();
         List<Product> results = products
-            .where((p) => p.name.toLowerCase().contains(event.keyword.toLowerCase()))
+            .where((p) =>
+                p.name.toLowerCase().contains(event.keyword.toLowerCase()))
             .toList();
         emit(ResultsLoaded(results));
 

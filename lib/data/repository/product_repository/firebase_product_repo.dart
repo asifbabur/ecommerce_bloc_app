@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ecommerce_bloc_app/data/models/models.dart';
-import 'package:ecommerce_bloc_app/data/repository/product_repository/product_repo.dart';
+import 'package:myezzecommerce_app/data/models/models.dart';
+import 'package:myezzecommerce_app/data/repository/product_repository/product_repo.dart';
 
 class FirebaseProductRepository implements ProductRepository {
   final CollectionReference productCollection =
@@ -13,7 +13,8 @@ class FirebaseProductRepository implements ProductRepository {
     return await productCollection
         .get()
         .then((snapshot) => snapshot.docs
-            .map((doc) => Product.fromMap(doc.id, doc.data() as Map<String, dynamic>))
+            .map((doc) =>
+                Product.fromMap(doc.id, doc.data() as Map<String, dynamic>))
             .toList())
         .catchError((error) {});
   }
@@ -27,7 +28,8 @@ class FirebaseProductRepository implements ProductRepository {
         .limit(10)
         .get()
         .then((snapshot) => snapshot.docs
-            .map((doc) => Product.fromMap(doc.id, doc.data() as Map<String, dynamic>))
+            .map((doc) =>
+                Product.fromMap(doc.id, doc.data() as Map<String, dynamic>))
             .toList())
         .catchError((error) {});
   }
@@ -42,7 +44,8 @@ class FirebaseProductRepository implements ProductRepository {
         .limit(10)
         .get()
         .then((snapshot) => snapshot.docs
-            .map((doc) => Product.fromMap(doc.id, doc.data() as Map<String, dynamic>))
+            .map((doc) =>
+                Product.fromMap(doc.id, doc.data() as Map<String, dynamic>))
             .toList())
         .catchError((error) {});
   }
@@ -56,7 +59,8 @@ class FirebaseProductRepository implements ProductRepository {
         .where("categoryId", isEqualTo: categoryId)
         .get()
         .then((snapshot) => snapshot.docs
-            .map((doc) => Product.fromMap(doc.id, doc.data() as Map<String, dynamic>))
+            .map((doc) =>
+                Product.fromMap(doc.id, doc.data() as Map<String, dynamic>))
             .toList())
         .catchError((error) {});
   }
@@ -69,7 +73,8 @@ class FirebaseProductRepository implements ProductRepository {
     return await productCollection
         .doc(pid)
         .get()
-        .then((doc) => Product.fromMap(doc.id, doc.data() as Map<String, dynamic>))
+        .then((doc) =>
+            Product.fromMap(doc.id, doc.data() as Map<String, dynamic>))
         .catchError((error) {});
   }
 
@@ -93,7 +98,7 @@ class FirebaseProductRepository implements ProductRepository {
         .collection("categories")
         .get()
         .then((snapshot) => snapshot.docs
-            .map((doc) => CategoryModel.fromMap(doc.id, doc.data()!))
+            .map((doc) => CategoryModel.fromMap(doc.id, doc.data()))
             .toList())
         .catchError((err) {});
   }

@@ -1,4 +1,4 @@
-import 'package:ecommerce_bloc_app/data/models/location_model.dart';
+import 'package:myezzecommerce_app/data/models/location_model.dart';
 import 'package:equatable/equatable.dart';
 
 class AddressPickerState extends Equatable {

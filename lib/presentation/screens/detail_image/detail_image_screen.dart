@@ -1,10 +1,10 @@
 import 'dart:typed_data';
 
 import 'package:dio/dio.dart';
-import 'package:ecommerce_bloc_app/configs/config.dart';
-import 'package:ecommerce_bloc_app/constants/constants.dart';
-import 'package:ecommerce_bloc_app/presentation/widgets/buttons/default_button.dart';
-import 'package:ecommerce_bloc_app/utils/translate.dart';
+import 'package:myezzecommerce_app/configs/config.dart';
+import 'package:myezzecommerce_app/constants/constants.dart';
+import 'package:myezzecommerce_app/presentation/widgets/buttons/default_button.dart';
+import 'package:myezzecommerce_app/utils/translate.dart';
 import 'package:flutter/material.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:image_gallery_saver/image_gallery_saver.dart';

@@ -1,9 +1,9 @@
-import 'package:ecommerce_bloc_app/constants/constants.dart';
-import 'package:ecommerce_bloc_app/presentation/screens/cart/widgets/list_cart_item.dart';
-import 'package:ecommerce_bloc_app/presentation/screens/cart/widgets/checkout_bottom.dart';
+import 'package:myezzecommerce_app/constants/constants.dart';
+import 'package:myezzecommerce_app/presentation/screens/cart/widgets/list_cart_item.dart';
+import 'package:myezzecommerce_app/presentation/screens/cart/widgets/checkout_bottom.dart';
 import 'package:flutter/material.dart';
-import 'package:ecommerce_bloc_app/presentation/common_blocs/cart/bloc.dart';
-import 'package:ecommerce_bloc_app/utils/utils.dart';
+import 'package:myezzecommerce_app/presentation/common_blocs/cart/bloc.dart';
+import 'package:myezzecommerce_app/utils/utils.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CartScreen extends StatelessWidget {

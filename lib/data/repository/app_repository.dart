@@ -1,5 +1,5 @@
-import 'package:ecommerce_bloc_app/data/repository/location_repository/location_repo.dart';
-import 'package:ecommerce_bloc_app/data/repository/repository.dart';
+import 'package:myezzecommerce_app/data/repository/location_repository/location_repo.dart';
+import 'package:myezzecommerce_app/data/repository/repository.dart';
 
 class AppRepository {
   /// Repository

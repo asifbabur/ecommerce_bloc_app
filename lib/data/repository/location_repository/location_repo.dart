@@ -1,7 +1,7 @@
-import 'package:ecommerce_bloc_app/data/models/error_model.dart';
-import 'package:ecommerce_bloc_app/data/models/location_model.dart';
-import 'package:ecommerce_bloc_app/data/request/api_url.dart';
-import 'package:ecommerce_bloc_app/data/request/request.dart';
+import 'package:myezzecommerce_app/data/models/error_model.dart';
+import 'package:myezzecommerce_app/data/models/location_model.dart';
+import 'package:myezzecommerce_app/data/request/api_url.dart';
+import 'package:myezzecommerce_app/data/request/request.dart';
 
 class LocationRepository {
   Request _request = Request(baseUrl: LocationApi.BASE_URL);

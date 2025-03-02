@@ -1,77 +1,66 @@
 import 'dart:async';
 
-import 'package:ecommerce_bloc_app/presentation/common_blocs/profile/bloc.dart';
-import 'package:ecommerce_bloc_app/data/models/models.dart';
-import 'package:ecommerce_bloc_app/data/repository/app_repository.dart';
-import 'package:ecommerce_bloc_app/data/repository/repository.dart';
-import 'package:ecommerce_bloc_app/data/repository/storage_repository/storage_repo.dart';
+import 'package:myezzecommerce_app/presentation/common_blocs/profile/bloc.dart';
+import 'package:myezzecommerce_app/data/models/models.dart';
+import 'package:myezzecommerce_app/data/repository/repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
-  AuthRepository _authRepository = AppRepository.authRepository;
-  UserRepository _userRepository = AppRepository.userRepository;
-  StorageRepository _storageRepository = AppRepository.storageRepository;
+  final AuthRepository _authRepository = AppRepository.authRepository;
+  final UserRepository _userRepository = AppRepository.userRepository;
+  final StorageRepository _storageRepository = AppRepository.storageRepository;
   StreamSubscription? _profileStreamSub;
   UserModel? _loggedUser;
 
-  ProfileBloc() : super(ProfileLoading());
-
-  @override
-  Stream<ProfileState> mapEventToState(event) async* {
-    if (event is LoadProfile) {
-      yield* _mapLoadProfileToState(event);
-    } else if (event is UploadAvatar) {
-      yield* _mapUploadAvatarToState(event);
-    } else if (event is AddressListChanged) {
-      yield* _mapAddressListChangedToState(event);
-    } else if (event is ProfileUpdated) {
-      yield* _mapProfileUpdatedToState(event);
-    }
+  ProfileBloc() : super(ProfileLoading()) {
+    on<LoadProfile>(_onLoadProfile);
+    on<UploadAvatar>(_onUploadAvatar);
+    on<AddressListChanged>(_onAddressListChanged);
+    on<ProfileUpdated>(_onProfileUpdated);
   }
 
-  /// Load Profile event => states
-  Stream<ProfileState> _mapLoadProfileToState(LoadProfile event) async* {
+  /// Handle LoadProfile event
+  Future<void> _onLoadProfile(
+      LoadProfile event, Emitter<ProfileState> emit) async {
     try {
-      _profileStreamSub?.cancel();
+      await _profileStreamSub?.cancel();
       _profileStreamSub = _userRepository
           .loggedUserStream(_authRepository.loggedFirebaseUser)
           .listen((updatedUser) => add(ProfileUpdated(updatedUser)));
     } catch (e) {
-      yield ProfileLoadFailure(e.toString());
+      emit(ProfileLoadFailure(e.toString()));
     }
   }
 
-  /// Upload Avatar event => states
-  Stream<ProfileState> _mapUploadAvatarToState(UploadAvatar event) async* {
+  /// Handle UploadAvatar event
+  Future<void> _onUploadAvatar(
+      UploadAvatar event, Emitter<ProfileState> emit) async {
     try {
-      // Get image url from firebase storage
       String imageUrl = await _storageRepository.uploadImageFile(
         "users/profile/${_loggedUser!.id}",
         event.imageFile,
       );
-      // Clone logged user with updated avatar
       var updatedUser = _loggedUser!.cloneWith(avatar: imageUrl);
-      // Update user's avatar
       await _userRepository.updateUserData(updatedUser);
-    } catch (e) {}
+    } catch (e) {
+      emit(ProfileLoadFailure(e.toString()));
+    }
   }
 
-  /// Address List Changed event => states
-  Stream<ProfileState> _mapAddressListChangedToState(
-      AddressListChanged event) async* {
+  /// Handle AddressListChanged event
+  Future<void> _onAddressListChanged(
+      AddressListChanged event, Emitter<ProfileState> emit) async {
     try {
-      // Get delivery address from event
       var deliveryAddress = event.deliveryAddress;
-      // Get current addresses
       var addresses = List<DeliveryAddressModel>.from(_loggedUser!.addresses);
+
       if (deliveryAddress.isDefault) {
         addresses =
             addresses.map((item) => item.cloneWith(isDefault: false)).toList();
       }
-      // Check method
+
       switch (event.method) {
         case ListMethod.ADD:
-          // If current addresses is empty, so the first delivery address is always default
           if (addresses.isEmpty) {
             deliveryAddress = deliveryAddress.cloneWith(isDefault: true);
           }
@@ -81,28 +70,24 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
           addresses.remove(deliveryAddress);
           break;
         case ListMethod.UPDATE:
-          addresses = addresses.map((item) {
-            return item.id == deliveryAddress.id ? deliveryAddress : item;
-          }).toList();
-
+          addresses = addresses
+              .map((item) =>
+                  item.id == deliveryAddress.id ? deliveryAddress : item)
+              .toList();
           break;
-        default:
       }
-      // Clone logged user with updated addresses
+
       var updatedUser = _loggedUser!.cloneWith(addresses: addresses);
-      // Update user's addresses
       await _userRepository.updateUserData(updatedUser);
-    } catch (e) {}
+    } catch (e) {
+      emit(ProfileLoadFailure(e.toString()));
+    }
   }
 
-  /// Profile Updated event => states
-  Stream<ProfileState> _mapProfileUpdatedToState(ProfileUpdated event) async* {
-    try {
-      _loggedUser = event.updatedUser;
-      yield ProfileLoaded(event.updatedUser);
-    } catch (e) {
-      yield ProfileLoadFailure(e.toString());
-    }
+  /// Handle ProfileUpdated event
+  void _onProfileUpdated(ProfileUpdated event, Emitter<ProfileState> emit) {
+    _loggedUser = event.updatedUser;
+    emit(ProfileLoaded(event.updatedUser));
   }
 
   @override

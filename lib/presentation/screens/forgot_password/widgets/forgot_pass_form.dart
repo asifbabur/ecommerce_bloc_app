@@ -1,8 +1,8 @@
-// import 'package:ecommerce_bloc_app/constants/form_error_constant.dart';
-// import 'package:ecommerce_bloc_app/constants/style_constant.dart';
-// import 'package:ecommerce_bloc_app/presentation/widgets/buttons/default_button.dart';
+// import 'package:myezzecommerce_app/constants/form_error_constant.dart';
+// import 'package:myezzecommerce_app/constants/style_constant.dart';
+// import 'package:myezzecommerce_app/presentation/widgets/buttons/default_button.dart';
 // import 'package:flutter/material.dart';
-// import 'package:ecommerce_bloc_app/configs/size_config.dart';
+// import 'package:myezzecommerce_app/configs/size_config.dart';
 
 // class ForgotPassForm extends StatefulWidget {
 //   @override

@@ -1,11 +1,10 @@
-import 'package:ecommerce_bloc_app/configs/size_config.dart';
-import 'package:ecommerce_bloc_app/constants/constants.dart';
-import 'package:ecommerce_bloc_app/presentation/screens/feedbacks/bloc/bloc.dart';
-import 'package:ecommerce_bloc_app/presentation/widgets/others/rating_bar.dart';
-import 'package:ecommerce_bloc_app/utils/translate.dart';
+import 'package:myezzecommerce_app/configs/size_config.dart';
+import 'package:myezzecommerce_app/constants/constants.dart';
+import 'package:myezzecommerce_app/presentation/screens/feedbacks/bloc/bloc.dart';
+import 'package:myezzecommerce_app/presentation/widgets/others/rating_bar.dart';
+import 'package:myezzecommerce_app/utils/translate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ecommerce_bloc_app/constants/color_constant.dart';
 
 class Header extends StatefulWidget {
   const Header({Key? key}) : super(key: key);

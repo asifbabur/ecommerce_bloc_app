@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ecommerce_bloc_app/data/models/models.dart';
-import 'package:ecommerce_bloc_app/data/repository/repository.dart';
+import 'package:myezzecommerce_app/data/models/models.dart';
+import 'package:myezzecommerce_app/data/repository/repository.dart';
 
 class FirebaseMessageRepository implements MessageRepository {
   final userCollection = FirebaseFirestore.instance.collection("users");
@@ -18,7 +18,7 @@ class FirebaseMessageRepository implements MessageRepository {
         .snapshots()
         .map(
           (snapshot) => snapshot.docs
-              .map((doc) => MessageModel.fromMap(doc.data()!))
+              .map((doc) => MessageModel.fromMap(doc.data()))
               .toList(),
         );
   }
@@ -40,7 +40,7 @@ class FirebaseMessageRepository implements MessageRepository {
         .get()
         .then(
           (snapshot) => snapshot.docs
-              .map((doc) => MessageModel.fromMap(doc.data()!))
+              .map((doc) => MessageModel.fromMap(doc.data()))
               .toList(),
         );
   }
@@ -56,7 +56,8 @@ class FirebaseMessageRepository implements MessageRepository {
         .limit(1)
         .get();
     if (querySnapshot.docs.isEmpty) return null;
-    return MessageModel.fromMap(querySnapshot.docs[0].data() as Map<String, dynamic>);
+    return MessageModel.fromMap(
+        querySnapshot.docs[0].data() as Map<String, dynamic>);
   }
 
   /// Add item

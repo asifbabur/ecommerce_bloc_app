@@ -1,10 +1,10 @@
-import 'package:ecommerce_bloc_app/data/models/models.dart';
-import 'package:ecommerce_bloc_app/constants/constants.dart';
-import 'package:ecommerce_bloc_app/presentation/screens/feedbacks/bloc/bloc.dart';
-import 'package:ecommerce_bloc_app/presentation/screens/feedbacks/widgets/feedback_bottom_sheet.dart';
-import 'package:ecommerce_bloc_app/presentation/screens/feedbacks/widgets/header.dart';
-import 'package:ecommerce_bloc_app/presentation/screens/feedbacks/widgets/list_feedbacks.dart';
-import 'package:ecommerce_bloc_app/utils/utils.dart';
+import 'package:myezzecommerce_app/data/models/models.dart';
+import 'package:myezzecommerce_app/constants/constants.dart';
+import 'package:myezzecommerce_app/presentation/screens/feedbacks/bloc/bloc.dart';
+import 'package:myezzecommerce_app/presentation/screens/feedbacks/widgets/feedback_bottom_sheet.dart';
+import 'package:myezzecommerce_app/presentation/screens/feedbacks/widgets/header.dart';
+import 'package:myezzecommerce_app/presentation/screens/feedbacks/widgets/list_feedbacks.dart';
+import 'package:myezzecommerce_app/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

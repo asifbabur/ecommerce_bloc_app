@@ -1,8 +1,8 @@
-import 'package:ecommerce_bloc_app/configs/config.dart';
-import 'package:ecommerce_bloc_app/constants/constants.dart';
-import 'package:ecommerce_bloc_app/presentation/screens/initialize_info/widgets/initialize_info_form.dart';
-import 'package:ecommerce_bloc_app/presentation/screens/initialize_info/widgets/initialize_info_header.dart';
-import 'package:ecommerce_bloc_app/utils/utils.dart';
+import 'package:myezzecommerce_app/configs/config.dart';
+import 'package:myezzecommerce_app/constants/constants.dart';
+import 'package:myezzecommerce_app/presentation/screens/initialize_info/widgets/initialize_info_form.dart';
+import 'package:myezzecommerce_app/presentation/screens/initialize_info/widgets/initialize_info_header.dart';
+import 'package:myezzecommerce_app/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 class InitializeInfoScreen extends StatelessWidget {

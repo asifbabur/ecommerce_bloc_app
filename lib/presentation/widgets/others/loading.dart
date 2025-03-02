@@ -1,4 +1,4 @@
-import 'package:ecommerce_bloc_app/constants/constants.dart';
+import 'package:myezzecommerce_app/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 class Loading extends StatelessWidget {

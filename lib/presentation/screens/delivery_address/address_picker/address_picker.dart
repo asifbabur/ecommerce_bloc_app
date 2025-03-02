@@ -1,8 +1,8 @@
-import 'package:ecommerce_bloc_app/configs/config.dart';
-import 'package:ecommerce_bloc_app/data/models/delivery_address_model.dart';
-import 'package:ecommerce_bloc_app/data/models/location_model.dart';
-import 'package:ecommerce_bloc_app/presentation/screens/delivery_address/address_picker/bloc/bloc.dart';
-import 'package:ecommerce_bloc_app/utils/utils.dart';
+import 'package:myezzecommerce_app/configs/config.dart';
+import 'package:myezzecommerce_app/data/models/delivery_address_model.dart';
+import 'package:myezzecommerce_app/data/models/location_model.dart';
+import 'package:myezzecommerce_app/presentation/screens/delivery_address/address_picker/bloc/bloc.dart';
+import 'package:myezzecommerce_app/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

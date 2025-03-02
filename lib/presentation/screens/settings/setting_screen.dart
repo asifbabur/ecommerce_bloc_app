@@ -1,10 +1,10 @@
-import 'package:ecommerce_bloc_app/presentation/common_blocs/language/bloc.dart';
-import 'package:ecommerce_bloc_app/configs/config.dart';
-import 'package:ecommerce_bloc_app/constants/color_constant.dart';
-import 'package:ecommerce_bloc_app/presentation/widgets/custom_widgets.dart';
-import 'package:ecommerce_bloc_app/utils/language.dart';
-import 'package:ecommerce_bloc_app/utils/dialog.dart';
-import 'package:ecommerce_bloc_app/utils/translate.dart';
+import 'package:myezzecommerce_app/presentation/common_blocs/language/bloc.dart';
+import 'package:myezzecommerce_app/configs/config.dart';
+import 'package:myezzecommerce_app/constants/color_constant.dart';
+import 'package:myezzecommerce_app/presentation/widgets/custom_widgets.dart';
+import 'package:myezzecommerce_app/utils/language.dart';
+import 'package:myezzecommerce_app/utils/dialog.dart';
+import 'package:myezzecommerce_app/utils/translate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

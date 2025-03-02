@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:ecommerce_bloc_app/data/models/location_model.dart';
+import 'package:myezzecommerce_app/data/models/location_model.dart';
 
-import 'package:ecommerce_bloc_app/data/repository/app_repository.dart';
-import 'package:ecommerce_bloc_app/data/repository/location_repository/location_repo.dart';
+import 'package:myezzecommerce_app/data/repository/app_repository.dart';
+import 'package:myezzecommerce_app/data/repository/location_repository/location_repo.dart';
 
 import 'address_picker_event.dart';
 import 'address_picker_state.dart';

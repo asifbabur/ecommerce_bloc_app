@@ -1,6 +1,6 @@
-import 'package:ecommerce_bloc_app/presentation/screens/home_page/bloc/bloc.dart';
-import 'package:ecommerce_bloc_app/presentation/screens/home_page/widgets/home_body.dart';
-import 'package:ecommerce_bloc_app/presentation/screens/home_page/widgets/home_header.dart';
+import 'package:myezzecommerce_app/presentation/screens/home_page/bloc/bloc.dart';
+import 'package:myezzecommerce_app/presentation/screens/home_page/widgets/home_body.dart';
+import 'package:myezzecommerce_app/presentation/screens/home_page/widgets/home_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

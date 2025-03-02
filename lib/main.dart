@@ -1,11 +1,11 @@
-import 'package:ecommerce_bloc_app/firebase_options.dart';
-import 'package:ecommerce_bloc_app/presentation/common_blocs/common_bloc.dart';
-import 'package:ecommerce_bloc_app/configs/config.dart';
+import 'package:myezzecommerce_app/firebase_options.dart';
+import 'package:myezzecommerce_app/presentation/common_blocs/common_bloc.dart';
+import 'package:myezzecommerce_app/configs/config.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ecommerce_bloc_app/app_view.dart';
+import 'package:myezzecommerce_app/app_view.dart';
 import 'presentation/common_blocs/simple_bloc_observer.dart';
 
 void main() async {
